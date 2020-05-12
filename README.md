@@ -1,3 +1,13 @@
+# EBSeq.v2 Package
+
+## Installation
+You can install EBSeq.v2 from github with:
+```
+# install.packages("devtools")
+devtools::install_github("-----")
+```
+
+
 # EBSeq Q & A
 
 
