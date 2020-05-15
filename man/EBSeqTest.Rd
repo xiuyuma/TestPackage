@@ -9,34 +9,34 @@ EBSeqTest(data, conditions, uc, iLabel = 1, sizefactor = 1,
   thre = log(2), sthre = 0.001, filter = 10, stopthre = 0.001)
 }
 \arguments{
-\item{data}{single cell expression matrix, row as genes column as cells (normalized counts required)}
+\item{data}{A data matrix contains expression values for each transcript (gene or isoform level). In which rows should be transcripts and columns should be samples. For single cell data, normalized counts are required}
 
-\item{conditions}{partition of cells}
+\item{conditions}{condition label for samples}
 
-\item{uc}{number of unceratin relations between means of subtypes for each gene level}
+\item{uc}{number of unceratin positions, unit level}
 
-\item{iLabel}{label for isoform, indicating which beta are shared}
+\item{iLabel}{label for isoform, indicating how beta are shared among units}
 
 \item{iter}{maximum iteration step of EM}
 
-\item{alpha}{start point of hyper parameter alpha}
+\item{alpha}{start value of hyper parameter alpha}
 
-\item{beta}{start point of hyper parameter beta}
+\item{beta}{start value of hyper parameter beta}
 
 \item{step1}{stepsize for gradient ascent of alpha}
 
 \item{step2}{stepsize for gradietn ascent of beta}
 
-\item{thre}{threshold for determining whether a relation is sure or uncertain}
+\item{thre}{threshold for determining the state of a position}
 
-\item{sthre}{shrinkage threshold for iterative pruning space of DE patterns}
+\item{sthre}{shrinkage threshold for iterative pruning during the EM updates}
 
-\item{filter}{filterthreshold for low expression gene for DE analysis}
+\item{filter}{filterthreshold for low expression units}
 
 \item{stopthre}{stopping threshold for EM}
 }
 \value{
-a list containing considered DE patterns and their posterior probability, values for alpha and beta
+a list containing selected DE patterns and their posterior probabilities, values for alpha and beta, some moments of the data
 }
 \description{
 iterative pruning empirical bayesian
