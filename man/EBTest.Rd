@@ -60,9 +60,9 @@ In which the l_s is the sizeFactors of samples.
 The function will test "H0: q_{gi}^{C1} = q_{gi}^{C2}" and "H1: q_{gi}^{C1} != q_{gi}^{C2}."
 }
 \value{
-\item{Alpha}{Fitted parameter alpha of the prior beta distribution. Rows are the values for each iteration.}
-\item{Beta}{Fitted parameter beta of the prior beta distribution. Rows are the values for each iteration.}
-\item{P, PFromZ}{The bayes estimator of being DE. Rows are the values for each iteration.}
+\item{Alpha}{Fitted parameter alpha of the prior beta distribution. }
+\item{Beta}{Fitted parameter beta of the prior beta distribution.}
+\item{P}{Global proportion of DE patterns, $p_{\text{global},\pi}$.}
 \item{Z, PoissonZ}{The Posterior Probability of being DE for each transcript(Maybe not in the same order of input). }
 \item{RList}{The fitted values of r for each transcript.}
 \item{MeanList}{The mean of each transcript (across conditions).}
