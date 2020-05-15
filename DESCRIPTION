@@ -23,7 +23,7 @@ Imports: Rcpp (>= 0.12.11), RcppEigen (>= 0.3.2.9.0)
 LinkingTo: Rcpp,RcppEigen,BH
 SystemRequirements: c++11
 Roxygen: list(wrap=FALSE)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 biocViews: ImmunoOncology, StatisticalMethod, DifferentialExpression,
         MultipleComparison, RNASeq, Sequencing
 git_url: https://git.bioconductor.org/packages/EBSeq

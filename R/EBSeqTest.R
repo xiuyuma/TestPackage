@@ -1,21 +1,4 @@
 
-#' iterative pruning empirical bayesian
-#'
-#' @param data single cell expression matrix, row as genes column as cells (normalized counts required)
-#' @param conditions partition of cells
-#' @param uc number of unceratin relations between means of subtypes for each gene level
-#' @param iLabel label for isoform, indicating which beta are shared
-#' @param iter maximum iteration step of EM
-#' @param alpha start point of hyper parameter alpha
-#' @param beta start point of hyper parameter beta
-#' @param step1 stepsize for gradient ascent of alpha
-#' @param step2 stepsize for gradietn ascent of beta
-#' @param thre threshold for determining whether a relation is sure or uncertain
-#' @param sthre shrinkage threshold for iterative pruning space of DE patterns
-#' @param filter filterthreshold for low expression gene for DE analysis
-#' @param stopthre stopping threshold for EM
-#' @return a list containing considered DE patterns and their posterior probability, values for alpha and beta
-#' @export
 
 EBSeqTest <- function(data,conditions,uc, iLabel = 1,sizefactor = 1,
 iter = 50,alpha = 0.4, beta = 0, step1 = 1e-6,step2 = 0.01,
