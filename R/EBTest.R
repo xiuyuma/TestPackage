@@ -111,7 +111,7 @@ function(Data,NgVector=NULL,Conditions, sizeFactors, uc, Alpha=NULL, Beta=NULL, 
     RList=res$r, MeanList=MeanList,
     VarList=VarList, QList = res$q,
     Mean = res$mean,Var = res$var, PoolVar=res$poolVar,
-    DataNorm = DataNorm, Iso = NgVector,
+    DataNorm = DataNorm, 
     AllZeroIndex = AllZeroNames,
     PPMat = Mat,AllParti = parti, PPMatWith0 = Matwith0,
     Conditions=Conditions)

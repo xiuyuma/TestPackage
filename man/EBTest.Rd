@@ -62,32 +62,25 @@ The function will test "H0: q_{gi}^{C1} = q_{gi}^{C2}" and "H1: q_{gi}^{C1} != q
 \value{
 \item{Alpha}{Fitted parameter alpha of the prior beta distribution. }
 \item{Beta}{Fitted parameter beta of the prior beta distribution.}
-\item{P}{Global proportion of DE patterns, $p_{\text{global},\pi}$.}
-\item{Z, PoissonZ}{The Posterior Probability of being DE for each transcript(Maybe not in the same order of input). }
+\item{P}{Global proportion of DE patterns.}
 \item{RList}{The fitted values of r for each transcript.}
 \item{MeanList}{The mean of each transcript (across conditions).}
 \item{VarList}{The variance of each transcript (across conditions).}
-\item{QListi1}{The fitted q values of each transcript within condition 1.}
-\item{QListi2}{The fitted q values of each transcript within condition 2.}
-\item{C1Mean}{The mean of each transcript within Condition 1 (adjusted by normalization factors).}
-\item{C2Mean}{The mean of each transcript within Condition 2 (adjusted by normalization factors).}
-\item{C1EstVar}{The estimated variance of each transcript within Condition 1 (adjusted by normalization factors).}
-\item{C2EstVar}{The estimated variance of each transcript within Condition 2 (adjusted by normalization factors).}
+\item{QListi1}{The fitted q values of each transcript within the two conditions}
+\item{Mean}{The mean of each transcript within the two conditions (adjusted by normalization factors).}
+\item{Var}{The estimated variance of each transcript within the two conditions (adjusted by normalization factors).}
 \item{PoolVar}{The variance of each transcript (The pooled value of within condition EstVar).}
-\item{DataList}{A List of data that grouped with Ng.}
-\item{PPDE}{The Posterior Probability of being DE for each transcript (The same order of input).}
-\item{f0,f1}{The likelihood of the prior predictive distribution of being EE or DE (in log scale).}
+\item{DataNorm}{Normalized expression matrix.}
 \item{AllZeroIndex}{The transcript with expression 0 for all samples (which are not tested).}
 \item{PPMat}{A matrix contains posterior probabilities of being EE (the first column) or DE (the second column). 
 Rows are transcripts. 
 Transcripts with expression 0 for all samples are not shown in this matrix.}
+\item{AllParti}{selected patterns}
 \item{PPMatWith0}{A matrix contains posterior probabilities of being EE (the first column) or DE (the second column). 
 Rows are transcripts. 
 Transcripts with expression 0 for all samples are shown as PP(EE) = PP(DE) = NA in this matrix. 
 The transcript order is exactly the same as the order of the input data.}
-\item{ConditionOrder}{The condition assignment for C1Mean, C2Mean, etc.}
-\item{Conditions}{The input conditions.}
-\item{DataNorm}{Normalized expression matrix.}
+\item{Conditions}{The input conditions.
 }
 \references{
 Ning Leng, John A. Dawson, James A. Thomson, Victor Ruotti, Anna I. Rissman, Bart M.G. Smits, Jill D. Haag, Michael N. Gould, Ron M. Stewart, and Christina Kendziorski. EBSeq: An empirical Bayes hierarchical model for inference in RNA-seq experiments. Bioinformatics (2013)
