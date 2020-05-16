@@ -97,8 +97,7 @@ EBMultiTest, PostFC, GetPPMat
 \examples{
 data(GeneMat)
 str(GeneMat)
-GeneMat.small = GeneMat[c(1:10,511:550),]
-Sizes = MedianNorm(GeneMat.small)
+Sizes = MedianNorm(GeneMat)
 EBOut = EBTest(Data=GeneMat, Conditions=as.factor(rep(c("C1","C2"),each=5)),
        uc = 1,sizeFactors = Sizes)
 PP = GetPPMat(EBOut)
