@@ -25,8 +25,7 @@ Ning Leng, Xiuyu Ma
 \examples{
 
 data(GeneMat)
-GeneMat.small = GeneMat[c(500:550),]
-Sizes = MedianNorm(GeneMat.small)
+Sizes = MedianNorm(GeneMat)
 EBOut = EBTest(Data=GeneMat, Conditions=as.factor(rep(c("C1","C2"),each=5)),
        uc = 1,sizeFactors = Sizes)
 PP = GetPPMat(EBOut)
