@@ -99,7 +99,7 @@ data(GeneMat)
 str(GeneMat)
 Sizes = MedianNorm(GeneMat)
 EBOut = EBTest(Data=GeneMat, Conditions=as.factor(rep(c("C1","C2"),each=5)),
-       uc = 1,sizeFactors = Sizes)
+       sizeFactors = Sizes)
 PP = GetPPMat(EBOut)
 }
 \keyword{ DE }

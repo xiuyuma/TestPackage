@@ -43,10 +43,11 @@ EBMultiTest, PostFC
 \examples{
 data(MultiGeneMat)
 
+
 Conditions = c("C1","C1","C2","C2","C3","C3")
 
 
-MultiSize = MedianNorm(MultiGeneMa)
+MultiSize = MedianNorm(MultiGeneMat)
 
 MultiOut = EBMultiTest(MultiGeneMat,Conditions=Conditions,uc = 2,
                      sizeFactors=MultiSize)

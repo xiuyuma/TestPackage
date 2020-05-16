@@ -1,5 +1,5 @@
 EBTest <-
-function(Data,NgVector=NULL,Conditions, sizeFactors, uc, Alpha=NULL, Beta=NULL, Qtrm=1, QtrmCut=0
+function(Data,NgVector=NULL,Conditions, sizeFactors, uc = 1, Alpha=NULL, Beta=NULL, Qtrm=1, QtrmCut=0
     ,maxround = 50, step1 = 1e-6,step2 = 0.01, thre = log(2), sthre = 0, filter = 10, stopthre = 1e-4)
 {
 	
