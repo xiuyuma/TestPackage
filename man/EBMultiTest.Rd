@@ -62,29 +62,31 @@ in 50 iterations, larger number is suggested.}
 
 
 \value{
-\item{Alpha}{Fitted parameter alpha of the prior beta distribution. Rows are the values for each iteration.}
-\item{Beta}{Fitted parameter beta of the prior beta distribution. Rows are the values for each iteration.}
-\item{P, PFromZ}{The bayes estimator of following each pattern of interest. Rows are the values for each iteration.}
-\item{Z, PoissonZ}{The Posterior Probability of following each pattern of interest for each transcript. (Maybe not in the same order of input).}
+\item{Alpha}{Fitted parameter alpha of the prior beta distribution. }
+\item{Beta}{Fitted parameter beta of the prior beta distribution.}
+\item{P}{Global proportion of DE patterns.}
 \item{RList}{The fitted values of r for each transcript.}
-\item{MeanList}{The mean of each transcript. (across conditions).}
-\item{VarList}{The variance of each transcript. (across conditions).}
-\item{QList}{The fitted q values of each transcript within each condition.}
-\item{SPMean}{The mean of each transcript within each condition (adjusted by the normalization factors).}
-\item{SPEstVar}{The estimated variance of each transcript within each condition (adjusted by the normalization factors).}
+\item{MeanList}{The mean of each transcript (across conditions).}
+\item{VarList}{The variance of each transcript (across conditions).}
+\item{QList}{The fitted q values of each transcript within the two conditions}
+\item{Mean}{The mean of each transcript within the two conditions (adjusted by normalization factors).}
+\item{Var}{The estimated variance of each transcript within the two conditions (adjusted by normalization factors).}
 \item{PoolVar}{The variance of each transcript (The pooled value of within condition EstVar).}
-\item{DataList}{A List of data that grouped with Ng and bias.}
-\item{PPpattern}{The Posterior Probability of following each pattern (columns) for each transcript (rows). Transcripts with expression 0 for all samples are not shown in this matrix.}
-\item{f}{The likelihood of likelihood of prior predictive distribution of being each pattern for each transcript. }
-\item{AllParti}{The matrix describe the patterns.}
-\item{PPpatternWith0}{The Posterior Probability of following each pattern (columns) for each transcript (rows). Transcripts with expression 0 for all samples are shown in this matrix with PP(any_pattrn)=NA.}
-\item{ConditionOrder}{The condition assignment for C1Mean, C2Mean, etc.}
+\item{DataNorm}{Normalized expression matrix.}
+\item{AllZeroIndex}{The transcript with expression 0 for all samples (which are not tested).}
+\item{PPMat}{The Posterior Probability of following each pattern (columns) for each transcript (rows). 
+Transcripts with expression 0 for all samples are not shown in this matrix.}
+\item{AllParti}{selected patterns}
+\item{PPMatWith0}{The Posterior Probability of following each pattern (columns) for each transcript (rows). Transcripts with expression 0 for all samples are shown in this matrix with PP(any_pattrn)=NA.
+The transcript order is exactly the same as the order of the input data.}
+\item{Conditions}{The input conditions.}
+\item{NumUC}{The number of uncertain positions at each unit}
 }
 \references{
 Ning Leng, John A. Dawson, James A. Thomson, Victor Ruotti, Anna I. Rissman, Bart M.G. Smits, Jill D. Haag, Michael N. Gould, Ron M. Stewart, and Christina Kendziorski. EBSeq: An empirical Bayes hierarchical model for inference in RNA-seq experiments. Bioinformatics (2013)
 }
 \author{
-Ning Leng
+Ning Leng, Xiuyu Ma
 }
 
 \seealso{

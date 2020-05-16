@@ -1,6 +1,6 @@
 EBTest <-
 function(Data,NgVector=NULL,Conditions, sizeFactors, uc, Alpha=NULL, Beta=NULL, Qtrm=1, QtrmCut=0
-    ,maxround = 50, step1 = 1e-6,step2 = 0.01, thre = log(2), sthre = 0.001, filter = 10, stopthre = 1e-3)
+    ,maxround = 50, step1 = 1e-6,step2 = 0.01, thre = log(2), sthre = 0, filter = 10, stopthre = 1e-4)
 {
 	
     ## validity check
@@ -89,7 +89,7 @@ function(Data,NgVector=NULL,Conditions, sizeFactors, uc, Alpha=NULL, Beta=NULL, 
         Alldiff = 1
     }
     
-    Mat = res$Posterior
+    Mat = res$Posterior[,c(Allequal,Alldiff)]
     
     Matwith0 = matrix(NA,nrow = nrow(DataNorm), ncol = 2)
 
@@ -100,10 +100,11 @@ function(Data,NgVector=NULL,Conditions, sizeFactors, uc, Alpha=NULL, Beta=NULL, 
     
     rownames(Mat) = rownames(Data)
     colnames(Mat) = c(1,2)
-    colnames(Mat)[Allequal] = "PPEE"
-    colnames(Mat)[Alldiff] = "PPDE"
+    colnames(Mat)[1] = "PPEE"
+    colnames(Mat)[2] = "PPDE"
     
-    parti = res$DEpattern
+    parti = res$DEpattern[c(Allequal,Alldiff),]
+    
     
     colnames(parti) = levels(Conditions)
     

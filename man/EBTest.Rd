@@ -66,7 +66,7 @@ The function will test "H0: q_{gi}^{C1} = q_{gi}^{C2}" and "H1: q_{gi}^{C1} != q
 \item{RList}{The fitted values of r for each transcript.}
 \item{MeanList}{The mean of each transcript (across conditions).}
 \item{VarList}{The variance of each transcript (across conditions).}
-\item{QListi1}{The fitted q values of each transcript within the two conditions}
+\item{QList}{The fitted q values of each transcript within the two conditions}
 \item{Mean}{The mean of each transcript within the two conditions (adjusted by normalization factors).}
 \item{Var}{The estimated variance of each transcript within the two conditions (adjusted by normalization factors).}
 \item{PoolVar}{The variance of each transcript (The pooled value of within condition EstVar).}
@@ -82,11 +82,12 @@ Transcripts with expression 0 for all samples are shown as PP(EE) = PP(DE) = NA 
 The transcript order is exactly the same as the order of the input data.}
 \item{Conditions}{The input conditions.
 }
+}
 \references{
 Ning Leng, John A. Dawson, James A. Thomson, Victor Ruotti, Anna I. Rissman, Bart M.G. Smits, Jill D. Haag, Michael N. Gould, Ron M. Stewart, and Christina Kendziorski. EBSeq: An empirical Bayes hierarchical model for inference in RNA-seq experiments. Bioinformatics (2013)
 }
 \author{
-Ning Leng
+Ning Leng, Xiuyu Ma
 }
 
 
@@ -98,9 +99,8 @@ data(GeneMat)
 str(GeneMat)
 GeneMat.small = GeneMat[c(1:10,511:550),]
 Sizes = MedianNorm(GeneMat.small)
-EBOut = EBTest(Data = GeneMat.small,
-	Conditions = as.factor(rep(c("C1","C2"), each = 5)),
-	sizeFactors = Sizes, maxround = 5)
+EBOut = EBTest(Data=GeneMat, Conditions=as.factor(rep(c("C1","C2"),each=5)),
+       uc = 1,sizeFactors = Sizes)
 PP = GetPPMat(EBOut)
 }
 \keyword{ DE }
