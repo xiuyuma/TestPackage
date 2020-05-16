@@ -94,9 +94,8 @@ EBTest, GetMultiPP, GetMultiFC
 }
 \examples{
 data(MultiGeneMat)
-MultiGeneMat.small = MultiGeneMat[201:210,]
 Conditions = c("C1","C1","C2","C2","C3","C3")
-MultiSize = MedianNorm(MultiGeneMat.small)
+MultiSize = MedianNorm(MultiGeneMat)
 MultiOut = EBMultiTest(MultiGeneMat,Conditions=Conditions,uc = 2,
                      sizeFactors=MultiSize)
 MultiPP = GetMultiPP(MultiOut)
