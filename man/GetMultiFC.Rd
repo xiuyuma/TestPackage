@@ -33,7 +33,7 @@ Ning Leng, John A. Dawson, James A. Thomson, Victor Ruotti, Anna I. Rissman, Bar
 }
 
 \author{
-Ning Leng,Xiuyu MA
+Ning Leng, Xiuyu MA
 }
 
 
@@ -46,15 +46,11 @@ MultiGeneMat.small = MultiGeneMat[201:210,]
 
 Conditions = c("C1","C1","C2","C2","C3","C3")
 
-PosParti = GetPatterns(Conditions)
-Parti = PosParti[-3,]
 
 MultiSize = MedianNorm(MultiGeneMat.small)
 
-MultiOut = EBMultiTest(MultiGeneMat.small, 
-	NgVector=NULL, Conditions=Conditions, 
-	AllParti=Parti, sizeFactors=MultiSize, 
-	maxround=5)
+MultiOut = EBMultiTest(MultiGeneMat,Conditions=Conditions,uc = 2,
+                     sizeFactors=MultiSize)
 
 MultiFC = GetMultiFC(MultiOut)
 

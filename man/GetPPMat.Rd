@@ -27,9 +27,8 @@ Ning Leng, Xiuyu Ma
 data(GeneMat)
 GeneMat.small = GeneMat[c(500:550),]
 Sizes = MedianNorm(GeneMat.small)
-EBOut = EBTest(Data = GeneMat.small,
-	Conditions = as.factor(rep(c("C1","C2"), each=5)),
-	sizeFactors = Sizes, maxround = 5)
+EBOut = EBTest(Data=GeneMat, Conditions=as.factor(rep(c("C1","C2"),each=5)),
+       uc = 1,sizeFactors = Sizes)
 PP = GetPPMat(EBOut)
 str(PP)
 head(PP)
